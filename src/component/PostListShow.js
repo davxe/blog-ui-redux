@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class ShowListPost extends React.Component
 {
@@ -30,6 +30,7 @@ class ShowListPost extends React.Component
                         })
                     }
                 </ul><hr/>
+                <p><Link to={`/users/${this.props.users.id}`}>More Posts from author:{this.props.users.name}</Link></p>
             </div> 
         )
     }

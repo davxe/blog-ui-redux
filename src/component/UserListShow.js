@@ -21,7 +21,7 @@ class ShowList extends React.Component
                             }
                         </ul>
                 </div>):(
-                <p>page is uner construction...</p>)}
+                <p>page is under construction...</p>)}
 
             </div> 
         )
