@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-
 class ShowListPost extends React.Component
 {
     render() {
@@ -10,7 +9,7 @@ class ShowListPost extends React.Component
         console.log('coment',this.props.comments)
         return (
             <div> 
-                <h2>USER NAME:- {this.props.users.name}</h2>
+                <h2>USER NAME:- {this.props.users.find(user=>user.id===this.props.posts.userId).name}</h2>
                 <h2>TITLE :-
                     {
                         this.props.posts.title
@@ -30,15 +29,15 @@ class ShowListPost extends React.Component
                         })
                     }
                 </ul><hr/>
-                <p><Link to={`/users/${this.props.users.id}`}>More Posts from author:{this.props.users.name}</Link></p>
+                <p><Link to={`/users/${this.props.users.find(user=>user.id==this.props.posts.userId).id}`}>More Posts from author:{this.props.users.find(user=>user.id===this.props.posts.userId).name}</Link></p>
             </div> 
         )
     }
 }
 const mapStateToProps=(state,props)=>{
     return {
-        posts:state.posts.find(post=>post.userId==props.match.params.userId),
-        users:state.users.find(user=>user.id==props.match.params.userId),
+        posts:state.posts.find(post=>post.id==props.match.params.userId),
+        users:state.users,
         comments:state.comments.filter(comment=>comment.postId==props.match.params.userId)
     }
 }

@@ -1,6 +1,5 @@
 import {connect} from 'react-redux'
 import {startGetPosts} from '../actions/postsAction'
-import {startGetUsers} from '../actions/usersAction'
 import React from 'react'
 import {Link} from 'react-router-dom'
 

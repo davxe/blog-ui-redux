@@ -12,8 +12,8 @@ function App(props)
         <BrowserRouter>
             <div>
                 <h2>Hello React App!!!</h2>
-                <Link to='/'>Home</Link>
-                <Link to='/userlist'>Users</Link>
+                <Link to='/'>Home</Link>-
+                <Link to='/userlist'>Users</Link>-
                 <Link to='/postlist'>Posts</Link>
 
                 <Route path='/' component={Home} exact={true}/>
